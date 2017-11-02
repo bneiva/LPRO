@@ -1,5 +1,7 @@
 package dkeep.logic;
 
+import java.awt.Point;
+
 public class Hero extends NewObject {
 	private int X;
     private int Y;
@@ -19,6 +21,18 @@ public class Hero extends NewObject {
 			
 		}
 	
+	public String statusHero() {
+		
+		if(curretState()==2) 
+			return " A";
+			
+		else if(curretState()==1) 
+			return " H";
+			
+		else
+			return "  ";
+	}
+	
 	
 	
 	
@@ -36,7 +50,6 @@ public class Hero extends NewObject {
 		
 	}
 		
-
 	public int hero_Y (String[][] map, int keyflag) {  // nao esta a funcionar bem  !!!!!!!!!!!!!!!!! 
 	
 		
@@ -49,6 +62,22 @@ public class Hero extends NewObject {
 			return this.Y;	
 			}
 		}
+
+	
+ public void  heroMovesIntoFreeCell(String[][] map, Point point){
+		
+		int Y=point.y;
+		int X=point.x;
+		
+		if(map[Y][X] == "  " ) {  // if wall
+			map[Y][X]=statusHero(); 
+			//return 1;
+		}
+
+			//return 0;
+			
+	}
+	
 	
 		
 		
