@@ -64,19 +64,6 @@ public class Hero extends NewObject {
 		}
 
 	
- public void  heroMovesIntoFreeCell(String[][] map, Point point){
-		
-		int Y=point.y;
-		int X=point.x;
-		
-		if(map[Y][X] == "  " ) {  // if wall
-			map[Y][X]=statusHero(); 
-			//return 1;
-		}
-
-			//return 0;
-			
-	}
 	
 	
 		

@@ -1,4 +1,5 @@
 package dkeep.logic;
+import java.awt.Point;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -17,7 +18,31 @@ public class NewObject {
  	public int getPositonY() {
  		return this.Y;
  	}
-
+ 	
+ 	public void updateCoordinates(String[][] map, String object, Point point) {
+ 		this.X=point.x;
+ 		this.Y=point.y;
+ 
+ 		if(map[this.Y][this.X] != " X")     				 //Wall
+	  		if(map[this.Y][this.X] != " S")  				 //Key
+	  			if(map[this.Y][this.X] != " E")			 //Exit
+	  				if(map[this.Y][this.X] != " H")        //Hero
+	  					if(map[this.Y-1][this.X] != " D")	 //Dragon
+	  						if(map[this.Y+1][this.X] != " D")
+	  							if(map[this.Y][this.X+1] != " D")
+	  								if(map[this.Y][this.X-1] != " D")
+	  									if(map[this.Y][this.X] != " D") 
+	  										map[this.Y][this.X]=object;
+	  									else
+	  										System.out.println("Error update coordinates");
+ 					
+ 	}
+ 	
+ 	
+ 	
+ 	public Point getCoordinates() {
+ 		return new Point(this.X,this.Y);
+ 	}
  	
  		
  	
@@ -82,6 +107,7 @@ public class NewObject {
 				
 		return this.Y;
 	}
+	
 	
    public void updatePosition(int X, int Y) {
 	   this.X=X;

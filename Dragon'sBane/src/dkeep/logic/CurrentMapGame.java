@@ -23,7 +23,10 @@ public class CurrentMapGame {
 		 return this.map;
 	 }
 
-		
+	public  String[][] updateMap(String[][] map) {
+		 return this.map=map;
+	 }
+	
 
 	public String[][] printMap(String[][] map) {
 		

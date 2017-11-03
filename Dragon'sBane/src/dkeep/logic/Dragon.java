@@ -48,8 +48,9 @@ public class Dragon extends NewObject  {
 	
 
     public String [][] moveDragon(String [][] map){
-    
-     if(this.dragon==1){    	
+     int dragonNotMove=1;
+    	 
+     if(this.dragon==1 && dragonNotMove==0){    	
     	 Random randomGenerator = new Random();
     
     	 if(availableMovement(map)==1 && (this.asleep==0 || map[this.Y][this.X]==" F")) {
